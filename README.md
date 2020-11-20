@@ -7,7 +7,9 @@ The files in this repository were used to configure the network depicted below.
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
 ![install-elk.yml](YAML/install-elk.yml.txt)
+
 ![filebeat-playbook.yml](YAML/filebeat-playbook.yml.txt)
+
 ![metricbeat-playbook.yml](YAML/metricbeat-playbook.yml.txt)
 
 This document contains the following details:
@@ -126,11 +128,14 @@ The playbook files contain a hosts paramater that can be used to specify which g
 http://23.101.22.101:5601/app/kibana
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 
+```
+
 1 Creating the Filebeat playbook.
 
 This will be created in the /etc/ansible/roles directory: 
 
 Command used to create file: nano /etc/ansible/roles/filebeat-playbook.yml
+
 
 ---
  - name: Installing and Launch Filebeat
@@ -211,6 +216,7 @@ Command used to create file: nano /etc/ansible/roles/metric-playbook.yml
     systemd:
       name: metricbeat
       enabled: yes
+      
 
   4 Creating the Metricbeat configuration file.
 
@@ -222,4 +228,7 @@ Command used to create file: nano /etc/ansible/roles/metric-playbook.yml
 
   ansible-playbook /etc/ansible/rules/filebeat-playbook.yml
   ansible-playbook /etc/ansible/rules/metricbeat-playbook.yml
+
+```
+
 
